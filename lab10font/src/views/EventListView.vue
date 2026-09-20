@@ -4,6 +4,8 @@ import EventCard from '@/components/EventCard.vue'
 import BaseInput from '@/components/BaseInput.vue'
 import type { Event } from '@/types'
 import { ref, onMounted, computed, watchEffect } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const events = ref<Event[] | null>(null)
 const totalEvents = ref<number>(0)
 const hasNextPage = computed(() => {
@@ -18,6 +20,24 @@ const props = defineProps({
 })
 const page = computed(() => props.page)
 const keyword = ref('')
+function updateKeyword() {
+  let queryFunction
+  if (keyword.value === '') {
+    queryFunction = EventService.getEvents(3, page.value)
+  } else {
+    queryFunction = EventService.getEventsByKeyword(keyword.value, 3, page.value)
+  }
+  queryFunction
+    .then((response) => {
+      events.value = response.data
+      console.log('events', events.value)
+      totalEvents.value = response.headers['x-total-count']
+      console.log('totalEvent', totalEvents.value)
+    })
+    .catch(() => {
+      router.push({ name: 'network-error-view' })
+    })
+}
 onMounted(() => {
   events.value = null
   watchEffect(() => {
@@ -41,6 +61,7 @@ onMounted(() => {
       type="text"
       label="Search..."
       class="w-full"
+      @input="updateKeyword"
     />
     <EventCard v-for="event in events" :key="event.id" :event="event" />
 
