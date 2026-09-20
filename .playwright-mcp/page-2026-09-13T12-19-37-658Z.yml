@@ -1,0 +1,41 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - navigation [ref=e6]:
+        - link "Event" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - text: "|"
+        - link "About" [ref=e8] [cursor=pointer]:
+          - /url: /about
+        - text: "|"
+        - link "New Event" [ref=e9] [cursor=pointer]:
+          - /url: /add-event
+        - text: "|"
+        - link "Add Organizer" [ref=e10] [cursor=pointer]:
+          - /url: /add-organizer
+    - heading "Events For Good" [level=1] [ref=e11]
+    - generic [ref=e12]:
+      - link [ref=e13] [cursor=pointer]:
+        - /url: /event/1
+        - generic [ref=e14]:
+          - heading "Midterm Exam" [level=2] [ref=e15]
+          - text: by
+          - heading "CAMT" [level=5] [ref=e16]
+          - text: "@Academic on CAMT Building"
+      - link [ref=e17] [cursor=pointer]:
+        - /url: /event/2
+        - generic [ref=e18]:
+          - heading "Commencement Day" [level=2] [ref=e19]
+          - text: by
+          - heading "CAMT" [level=5] [ref=e20]
+          - text: "@Academic on CMU Convention hall"
+      - link [ref=e21] [cursor=pointer]:
+        - /url: /event/3
+        - generic [ref=e22]:
+          - heading "Loy Krathong" [level=2] [ref=e23]
+          - text: by
+          - heading "CMU" [level=5] [ref=e24]
+          - text: "@Cultural on Ping River"
+  - generic [ref=e25]:
+    - generic "Toggle devtools panel" [ref=e26] [cursor=pointer]
+    - generic "Toggle Component Inspector" [ref=e32] [cursor=pointer]

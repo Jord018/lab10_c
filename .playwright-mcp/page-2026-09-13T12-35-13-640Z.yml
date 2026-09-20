@@ -1,0 +1,39 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - navigation [ref=e6]:
+        - link "Event" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - text: "|"
+        - link "About" [ref=e8] [cursor=pointer]:
+          - /url: /about
+        - text: "|"
+        - link "New Event" [ref=e9] [cursor=pointer]:
+          - /url: /add-event
+        - text: "|"
+        - link "Add Organizer" [ref=e10] [cursor=pointer]:
+          - /url: /add-organizer
+    - generic [ref=e11]:
+      - heading "Create an event" [level=1] [ref=e12]
+      - generic [ref=e13]:
+        - heading "Name & describe your event" [level=3] [ref=e14]
+        - text: Category
+        - textbox "Category" [ref=e15]: "[object Object]"
+        - heading "Name & describe your event" [level=3] [ref=e16]
+        - text: Title
+        - textbox "Title" [ref=e17]
+        - text: Description
+        - textbox "Description" [ref=e18]
+        - heading "Where is your event?" [level=3] [ref=e19]
+        - text: Location
+        - textbox "Location" [ref=e20]
+        - generic [ref=e21]: Select an Organizer
+        - combobox [ref=e23]:
+          - option "CAMT"
+          - option "CMU"
+          - option "ChiangMai"
+        - button "Submit" [ref=e24]
+      - generic [ref=e25]: "{ \"id\": null, \"category\": { \"id\": 0, \"name\": \"\" }, \"title\": \"\", \"description\": \"\", \"location\": \"\", \"date\": \"\", \"time\": \"\", \"petsAllowed\": false, \"organizer\": { \"id\": 0, \"name\": \"\" } }"
+  - generic [ref=e26]:
+    - generic "Toggle devtools panel" [ref=e27] [cursor=pointer]
+    - generic "Toggle Component Inspector" [ref=e33] [cursor=pointer]
